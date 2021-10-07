@@ -1,0 +1,17 @@
+/**/
+
+canvas{
+  background-image: url("https://64.media.tumblr.com/f32d431b36342ec918206f517c89893e/6b88e5e006296588-d3/s500x750/ffb837c564b8856c768ebe4a586b31fc6e119c03.gifv");
+  background-size: 100% 400px;
+  width: 100%;
+}
+
+button{
+  height: 60px;
+}
+
+button svg{
+  height: 40px;
+  width: 40px;
+  color: black;
+}
