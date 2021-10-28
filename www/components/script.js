@@ -174,3 +174,8 @@ function pare() {
 function reload() {
 location.reload();
 }
+
+function darkTheme()
+{
+  
+}
