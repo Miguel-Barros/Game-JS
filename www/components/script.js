@@ -1,3 +1,4 @@
+var corObs = "#708090";
 window.onload = function(){
   jogoInicio();
   document.querySelector("#direita").addEventListener("click", function(){
@@ -20,6 +21,14 @@ window.onload = function(){
      setTimeout(pare, 1000);
   });
 
+  document.querySelector("#white").addEventListener("click", function(){
+     whiteTheme();
+  });
+
+  document.querySelector("#dark").addEventListener("click", function(){
+     darkTheme();
+  });
+
   document.querySelector("#reset").addEventListener("click", function(){
      reload();
   });
@@ -30,12 +39,10 @@ var personagemObj;
 var osbtaculos = [];
 
 var pontos;
-
-
 function jogoInicio(){
   jogoArea.start();
   personagemObj = new componentes("#F5F5F5", 10, 220, 30, 30);
-  pontos = new componentes("#0000FF", 30, 30, 'Consolas', '30px', 'texto');
+  pontos = new componentes("#FFFFFF", 30, 30, 'Consolas', '30px', 'texto');
 }
 
 let jogoArea = {
@@ -132,8 +139,8 @@ function jogoAtualizar(){
    minVazio = 50
    maxVazio = 200;
    vazio = Math.floor(Math.random() * (maxVazio - minVazio + 1) + minVazio);
-   osbtaculos.push(new componentes('#6959CD', x, 0 , altura, 10));
-   osbtaculos.push(new componentes('#6959CD', x, altura  + vazio , x - altura - vazio, 10));
+   osbtaculos.push(new componentes(corObs, x, 0 , altura, 10));
+   osbtaculos.push(new componentes(corObs, x, altura  + vazio , x - altura - vazio, 10));
   }
 
   for(i = 0; i < osbtaculos.length; i++) {
@@ -175,7 +182,18 @@ function reload() {
 location.reload();
 }
 
+function whiteTheme()
+{
+  corObs = null;
+  corObs = "#e0ffff";
+  document.body.style.backgroundColor = "#f8f8ff";
+  document.querySelector('canvas').style.backgroundImage = "url(https://media0.giphy.com/media/xT9IgC2RzpbE7vBZ6M/giphy.gif?cid=ecf05e47n6r925pnqg7piuios8oys1ggz2ew08595gahdpa2&rid=giphy.gif&ct=g)";
+}
+
 function darkTheme()
 {
-  
+  corObs = null;
+  corObs = "#708090";
+  document.querySelector('canvas').style.backgroundImage = "url(https://64.media.tumblr.com/f32d431b36342ec918206f517c89893e/6b88e5e006296588-d3/s500x750/ffb837c564b8856c768ebe4a586b31fc6e119c03.gifv)";
+  document.body.style.backgroundColor = "#c0c0c0"
 }
